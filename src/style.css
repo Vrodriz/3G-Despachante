@@ -1,0 +1,367 @@
+/*ESTILO GERAL */
+
+*{  
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    background-color: #000;
+}
+
+body{   
+    height: 100vh;
+    background-color: black;
+}
+
+.interface{ 
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 4%; /* Adicionado padding para telas menores */
+}
+
+.interface .menu-desktop{   
+    padding-right: 160px;
+}
+
+.menu-desktop ul li a {
+    text-decoration: none;
+    color: #0a84f6;
+    transition: color 0.3s ease;
+    white-space: nowrap; /* Garante que o texto não quebre em linhas múltiplas */
+}
+
+.logo-image{    
+    max-width: 60%;
+}
+
+.flex{  
+    display: flex;
+}
+
+.btn-contato button{   
+    padding: 10px 40px; 
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 30px;
+    background-color: #0a84f6;
+    border: 0;  
+    cursor: pointer;
+    font-family: inherit;
+    color: #ffff;
+    transition: .2s;
+}
+
+h2.titulo{  
+    color: #ca3946;
+    font-size: 38px;
+    text-align: center;
+}
+
+h2.titulo span{ 
+    color: #0a84f6;
+}
+
+/* estilo do cabeçalho */
+header{ 
+    padding: 40px 4%;
+}
+
+header > .interface {   
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header a{   
+    color: #0a84f6;
+    text-decoration: none;
+    display: inline-block;
+    transition: .2s;
+}
+
+header a:hover{ 
+    color: #ca3946 ;
+    transform: scale(1.10);
+}
+
+header nav ul{  
+    display: flex;
+    list-style-type: none;
+}
+
+header nav ul li{ 
+    display: inline-block; 
+    padding: 0 20px; /* Reduzido o padding */
+}
+
+.btn-contato button:hover, form .btn-enviar input:hover{   
+    box-shadow: 0px 0px 8px #0a84f6 ;
+    transform: scale(1.05);
+}
+
+.png-3gdespachante{   
+    max-width: 100%; /* Ajustado para 100% */
+}
+
+/* Estilo do topo do site*/
+section.topo-do-site{  
+    padding: 40px 4%;
+}
+
+section.topo-do-site .flex{ 
+    align-items: center;
+    justify-content: center;
+    gap: 20px; /* Reduzido o gap */
+}
+
+.topo-do-site  h1{   
+    color: #0a84f6;
+    font-size: 42px;
+    line-height: 48px;
+}
+
+.topo-do-site .txt-topo-site h1 span{  
+    color: #ca3946;
+}
+
+.topo-do-site .txt-topo-site p{ 
+    color: #ffff;
+    margin: 40px 0;
+    font-size: 16px;
+}
+
+.topo-do-site .img-topo-site img{   
+    position: relative;
+    animation: flutuar 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes flutuar{ 
+    0% {    
+        top: 0;
+    }
+    100%{   
+        top: 30px;        
+    }
+}
+
+/* Estilo das Especialidades */
+
+section.especialidades {
+    padding: 10px 4%;
+}
+
+section.especialidades .flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 15px;
+    margin-top: 40px;
+}
+
+.especialidades .especialidades-box {
+    flex: 1 1 calc(25% - 30px); /* 25% da largura menos o espaçamento */
+    background-color: #000;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 20px;
+    transition: 0.2s;
+    text-align: center; /* Centralizar o conteúdo */
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0); /* Removido o box-shadow inicial */
+    overflow: hidden; /* Evitar que o box-shadow cause uma quebra de layout */
+}
+
+.especialidades .especialidades-box:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.5); /* Adicionado box-shadow com rgba */
+}
+
+.especialidades .especialidades-box .icon-send {
+    color: #0a84f6;
+    font-size: 50px;
+}
+
+.especialidades .especialidades-box h3 {
+    font-size: 22px;
+    margin: 15px 0;
+    color: #ca3946;
+}
+
+.especialidades .especialidades-box p {
+    font-size: 16px; /* Tamanho da fonte do parágrafo ajustado */
+    color: #fff; /* Cor do texto do parágrafo */
+}
+
+@media (max-width: 1200px) {
+    .especialidades .especialidades-box {
+        flex: 1 1 calc(33.33% - 30px); /* 3 por linha em telas menores */
+    }
+}
+
+@media (max-width: 900px) {
+    .especialidades .especialidades-box {
+        flex: 1 1 calc(50% - 30px); /* 2 por linha em telas menores */
+    }
+
+    header nav ul li {
+        padding: 0 10px; /* Ajuste do padding para telas menores */
+    }
+
+    .btn-contato button {
+        padding: 8px 30px; /* Ajuste do padding do botão */
+        font-size: 16px; /* Ajuste do tamanho da fonte */
+    }
+
+    .topo-do-site h1 {
+        font-size: 36px; /* Ajuste do tamanho da fonte do título */
+    }
+
+    .topo-do-site .flex {
+        flex-direction: column; /* Ajuste de layout para telas menores */
+    }
+}
+
+@media (max-width: 600px) {
+    .especialidades .especialidades-box {
+        flex: 1 1 calc(100% - 20px); /* 1 por linha em telas menores */
+    }
+
+    .interface {
+        padding: 0 2%; /* Ajuste do padding para telas menores */
+    }
+
+    section.topo-do-site .flex {
+        gap: 10px; /* Ajuste do gap para telas menores */
+    }
+
+    .topo-do-site h1 {
+        font-size: 28px; /* Ajuste do tamanho da fonte do título */
+    }
+
+    .topo-do-site .txt-topo-site p {
+        font-size: 14px; /* Ajuste do tamanho da fonte do parágrafo */
+    }
+}
+
+.maps-mapa {
+    width: 100%;
+    height: 500px; /* Altura fixa para a visualização, pode ser ajustada conforme necessário */
+}
+
+.container-maps h2{ 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+}
+
+.maps h2{   
+    color: #0a84f6;
+}
+
+.container-maps p{
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+    border: 1px solid #000;
+    color: #fff;
+    background-color: #ca3946;
+}
+
+/* Formulário */    
+
+section.formulario{ 
+    padding: 80px 4%;
+}
+
+form{   
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 40px;
+}
+
+form input, form textarea{ 
+    width: 100%;
+    background-color: #3a3a3a;
+    border: 0;
+    outline: 0;
+    padding: 20px 15px;
+    border-radius: 15px;
+    color: #fff;
+    font-size: 18px;
+}
+
+form textarea{  
+    resize: none;
+    max-height: 200px;
+}
+
+form .btn-enviar{   
+    margin-top: 20px;
+    text-align: center;
+}
+
+form .btn-enviar input{
+    width: 120px;
+    background-color: #0a84f6;
+    color: #fff;
+    font-weight: 700;
+    cursor: pointer;
+    transition: .2s;
+}
+
+footer{ 
+    padding: 40px 4%;
+    box-shadow: 0 0 40px 10px rgba(88, 87, 87, 0.938)
+}
+
+.logo-footer img{   
+    max-width: 200px;
+}
+
+.button-logo{   
+    color: #fff;
+}
+
+footer .flex{   
+    justify-content: space-between;
+}
+
+
+
+.borda{ 
+    border-top: 2px solid #0a84f6;
+}
+
+.interface .btn-social .button-logo{ 
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: none;
+    background-color: #000;
+    font-size: 32px;
+    cursor: pointer;
+    margin: 0 5px;
+    transition: .2s;
+    color: #fff;
+}
+
+footer .line-footer p {  
+    color: #0a84f6;
+    font-size: 32px;
+    margin-top: 30px;
+    margin-right: 10px; 
+}
+
+footer .line-footer a {  
+    color: #fff;
+    font-size: 15px;
+    text-decoration: none;
+    margin-right: 10px;
+    margin-left: 10px; 
+}
+
+
