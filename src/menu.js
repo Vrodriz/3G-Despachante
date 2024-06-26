@@ -1,22 +1,18 @@
+document.addEventListener('DOMContentLoaded', function() {
+    var btnAbrirMenu = document.getElementById('btn-menu');
+    var btnFecharMenu = document.querySelector('.btn-fechar');
+    var menuMobile = document.getElementById('menu-mobile');
+    var overlayMenu = document.getElementById('overlay-menu');
 
-let btnMenu = document.getElementById('btn-menu')
-let menu = document.getElementById('menu-mobile')
-let overlay = document.getElementById('overlay-menu')
+    btnAbrirMenu.addEventListener('click', function() {
+        menuMobile.classList.add('abrir-menu');
+    });
 
-btnMenu.addEventListener('click', ()=>{    
-    menu.classList.add('abrir-menu')
+    btnFecharMenu.addEventListener('click', function() {
+        menuMobile.classList.remove('abrir-menu');
+    });
 
-})
-
-menu.addEventListener('click', ()=>{    
-    menu.classList.remove('abrir-menu')
-
-})
-
-overlay.addEventListener('click', ()=>{    
-    menu.classList.remove('abrir-menu')
-
-})
-
-
-
+    overlayMenu.addEventListener('click', function() {
+        menuMobile.classList.remove('abrir-menu');
+    });
+});

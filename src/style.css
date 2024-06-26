@@ -98,10 +98,16 @@ header nav.menu-desktop ul li {
 
 /*Menu Mobile */    
 
-.btn-abrir-menu ion-icon{   
-    color: #000;
-    font-size: 0px;
+.btn-abrir-menu ion-icon {
+    color: #0a84f6;
+    font-size: 40px;
 }
+
+/* Esconder o container do menu mobile por padrão */
+.menu-mobile-container {
+    display: none;
+}
+
 
 .menu-mobile{   
     background-color: #000;
@@ -114,6 +120,10 @@ header nav.menu-desktop ul li {
     overflow: hidden;
     transition: .5s;
 
+}
+
+.menu-mobile-container {
+    display: none;
 }
 
 .menu-mobile.abrir-menu{    
@@ -402,10 +412,17 @@ footer .line-footer a {
 
     /*Classes Gerais*/
 
+    @media screen and (max-width: 900px) {
+        .menu-mobile-container {
+            display: block;
+        }
+    }
+
     .btn-abrir-menu ion-icon{   
         color: #0a84f6;
         font-size: 40px;
     }
+    
 
     .topo-do-site .flex {
         flex-direction: column-reverse;
