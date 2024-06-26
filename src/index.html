@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <!--fim-google-fonts-->
+    <script src="menu.js" defer></script>
     <!--boot-icon-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <!--fim-boot-icon-->
@@ -26,25 +27,46 @@
 
             <nav class="menu-desktop">  
                 <ul>
-                    <li><a href="#">Início</a></li>
-                    <li><a href="#">Serviços</a></li>
-                    <li><a href="#">Localização</a></li>
-                    <li><a href="#">Fale Conosco</a></li>
+                    <li><a href="#inicio">Início</a></li>
+                    <li><a href="#servicos">Serviços</a></li>
+                    <li><a href="#localizacao">Localização</a></li>
+                    <li><a href="#contato">Fale Conosco</a></li>
                 </ul>
             </nav>
 
             <div class="btn-contato">
-                <a href="#">
+                <a href="https://wa.me/559291606295?text=.">
                     <button>Contato</button>
                 </a>
             </div>
+        
+            <div class="btn-abrir-menu" id="btn-menu">    
+                <ion-icon name="menu-outline"></ion-icon>
+            </div>
 
+            <div class="menu-mobile" id="menu-mobile">   
+                <div class="btn-fechar">    
+                    <ion-icon name="close-outline"></ion-icon>
+                </div>  
 
+                <nav>  
+                    <ul>
+                        <li><a href="#inicio">Início</a></li>
+                        <li><a href="#servicos">Serviços</a></li>
+                        <li><a href="#localizacao">Localização</a></li>
+                        <li><a href="#contato">Fale Conosco</a></li>
+                        <li><a href="#contato">Contato</a></li>
+                    </ul>
+                </nav>
+
+            </div><!--menu-mobile-->
+
+            <div class="overlay-menu" id="overlay-menu"></div>
         </div><!--interface-->
     </header>
 
     <main>
-        <section class="topo-do-site">
+        <section class="topo-do-site" id="inicio">
             <div class="interface">
                 <div class="flex">
                     <div class="txt-topo-site">
@@ -52,7 +74,7 @@
                         <p>Somos uma empresa especializada em serviços de despachante, comprometida em agilizar todos os processos burocráticos relacionados ao Detran. Oferecemos emissão de documentos, regularização de veículos, transferências de propriedade e resolução de pendências. Conte conosco para simplificar sua vida e garantir todas as facilidades necessárias.</p>
 
                         <div class="btn-contato">
-                            <a href="#">    
+                            <a href="https://wa.me/559291606295?text=.">    
                                 <button>Entre em contato</button>
                             </a>
                         </div>
@@ -65,7 +87,7 @@
             </div><!--interface-->
         </section><!--topo-do-site-->
 
-        <section class="especialidades">    
+        <section class="especialidades" id="servicos">    
             <div class="interface">
                 <h2 class="titulo">NOSSOS <span>SERVIÇOS.</span></h2>
                 <div class="flex"> 
@@ -90,7 +112,7 @@
             
                     <div class="especialidades-box">
                         <span class="icon-send"><ion-icon name="file-tray-full-outline"></ion-icon></span>
-                        <h3>Licenciamento Anual</h3>
+                        <h3>Licenciamento Anual</h4>
                         <p>Renove o licenciamento anual do seu veículo conosco.</p>
                     </div><!--especialidades-box-->
             
@@ -122,32 +144,67 @@
             </div><!--interface-->
         </section><!--especialidades-->
 
-        <section class="maps"> 
+        <section class="maps" id="localizacao"> 
             <div class="container-maps"> 
                 <h2>LOCALIZAÇÃO</h2>
                 <p>Rua Rio Buafana, 18, São José 2. Em frente ao Mercadinho Frota.</p>
                 <div class="container-form">
 
-                    <iframe class="maps-mapa" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3984.137014216984!2d-59.96430986202986!3d-3.057994596178847!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x926c1ba4c448602b%3A0xb12de7965dfa75e5!2sR.%20Itarantim%2C%2093%20-%20Novo%20Aleixo%2C%20Manaus%20-%20AM%2C%2069098-212!5e0!3m2!1spt-BR!2sbr!4v1718554602669!5m2!1spt-BR!2sbr" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <iframe class="maps-mapa" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d996.0335300228514!2d-59.95723451687797!3d-3.0587735715922735!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x926c1ba29c357211%3A0x59c3200362fb2284!2sR.%20Rio%20Buafana%2C%2018%20-%20S%C3%A3o%20Jos%C3%A9%20Oper%C3%A1rio%2C%20Manaus%20-%20AM%2C%2069086-220!5e0!3m2!1spt-BR!2sbr!4v1718990852782!5m2!1spt-BR!2sbr"allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 
                 </div><!--container-form-->
             </div>
         </section><!--Maps-->
 
-        <section class="formulario">    
+        <section class="formulario" id="contato">    
             <div class="interface"> 
                 <h2 class="titulo">FALE <span>CONOSCO.</span></h2>
                 
-                <form action="">    
-                    <input type="text" name="" id="" placeholder="Seu nome completo:" required>
-                    <input type="text" name="" id="" placeholder="Insira seu número:">
-                    <input type="text" name="" id="" placeholder="Seu email:" required>
-                    <textarea name="" id="" placeholder="Descreva seu pedido" required></textarea>
+                <form id="contactForm">    
+                    <input class="input" type="text" id="name" name="nome" placeholder="Seu nome completo:" required>
+                    <input class="input" type="tel" id="number" name="telefone" placeholder="Insira seu número:">
+                    <input class="input" type="email" id="email" name="email" placeholder="Seu email:" required>
+                    <textarea name="pedido" id="send" placeholder="Descreva seu pedido" required></textarea>
                     <div class="btn-enviar"><input type="submit" value="ENVIAR"></div>
-
                 </form>
             </div><!--interface-->
         </section><!--formulario-->
+        
+        <script>
+            document.getElementById("contactForm").addEventListener("submit", function(event) {
+                event.preventDefault(); // Evita o envio padrão do formulário
+
+                // Cria um objeto FormData com os dados do formulário
+                var formData = new FormData(this);
+
+                // Envia os dados via fetch para o script PHP de envio de email
+                fetch("envia.php", {
+                    method: "POST",
+                    body: formData
+                })
+                .then(response => response.json()) // Converte a resposta para JSON
+                .then(data => {
+                    // Exibe a mensagem de retorno do PHP
+                    alert(data.message); // Aqui você pode usar um modal em vez de alert, se preferir
+                })
+                .catch(error => {
+                    console.error("Erro:", error);
+                    // Exibe uma mensagem de erro genérica, se algo der errado no AJAX
+                    alert("Houve um erro ao enviar o formulário.");
+                });
+            });
+
+            // Função para rolagem suave
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        </script>
 
     </main> 
 
@@ -159,7 +216,7 @@
                         <img src="img/3.png" alt="Logo-3G-Despachante">
                     </div><!--logo-footer-->
                     <div class="btn-social">
-                        <a href=""><button class="button-logo"><ion-icon name="logo-instagram"></ion-icon></button></a>
+                        <a href="https://www.instagram.com/3gdespachante/"><button class="button-logo"><ion-icon name="logo-instagram"></ion-icon></button></a>
                         <a href="#"><button class="button-logo"><ion-icon name="logo-linkedin"></ion-icon></button></a>
                     </div><!--btn-social-->
                 </div><!--flex-->

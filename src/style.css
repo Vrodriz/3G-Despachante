@@ -15,7 +15,8 @@ body {
 .interface {
     max-width: 1280px;
     margin: 0 auto;
-    padding: 0 4%; /* Adicionado padding para telas menores */
+    padding: 0 4%;
+    /* Adicionado padding para telas menores */
 }
 
 .interface .menu-desktop {
@@ -26,7 +27,8 @@ body {
     text-decoration: none;
     color: #0a84f6;
     transition: color 0.3s ease;
-    white-space: nowrap; /* Garante que o texto não quebre em linhas múltiplas */
+    white-space: nowrap;
+    /* Garante que o texto não quebre em linhas múltiplas */
 }
 
 .logo-image {
@@ -65,7 +67,7 @@ header {
     padding: 40px 4%;
 }
 
-header > .interface {
+header>.interface {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -78,7 +80,7 @@ header a {
     transition: .2s;
 }
 
-header a:hover {
+header nav.menu-desktop a:hover {
     color: #ca3946;
     transform: scale(1.10);
 }
@@ -88,18 +90,88 @@ header nav ul {
     list-style-type: none;
 }
 
-header nav ul li {
+header nav.menu-desktop ul li {
     display: inline-block;
-    padding: 0 20px; /* Reduzido o padding */
+    padding: 0 20px;
+    /* Reduzido o padding */
 }
 
-.btn-contato button:hover, form .btn-enviar input:hover {
+/*Menu Mobile */    
+
+.btn-abrir-menu ion-icon{   
+    color: #000;
+    font-size: 0px;
+}
+
+.menu-mobile{   
+    background-color: #000;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 999999;
+    width: 0%;
+    overflow: hidden;
+    transition: .5s;
+
+}
+
+.menu-mobile.abrir-menu{    
+    width: 70%;
+}
+
+.menu-mobile.abrir-menu ~ .overlay-menu{  
+    display: block;
+}
+
+.menu-mobile .btn-fechar{   
+    padding: 20px 5%;
+}
+
+.menu-mobile .btn-fechar ion-icon{ 
+    color: #fff;
+    font-size: 40px;
+}
+
+.menu-mobile nav ul{    
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-mobile nav ul li a{   
+    color: #fff;
+    font-size: 20px;
+    font-weight: 300;
+    padding: 30px 8%;
+    display: block;
+}
+
+.overlay-menu{  
+    background-color: #0000008a;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 88888;
+    display: none;
+}
+
+.menu-mobile nav ul li a:hover{ 
+    background-color: #0a84f6;
+    color: #000;
+}
+
+.btn-contato button:hover,
+form .btn-enviar input:hover {
     box-shadow: 0px 0px 8px #0a84f6;
     transform: scale(1.05);
 }
 
 .png-3gdespachante {
-    max-width: 100%; /* Ajustado para 100% */
+    max-width: 100%;
+    /* Ajustado para 100% */
 }
 
 /* Estilo do topo do site */
@@ -110,7 +182,8 @@ section.topo-do-site {
 section.topo-do-site .flex {
     align-items: center;
     justify-content: center;
-    gap: 20px; /* Reduzido o gap */
+    gap: 20px;
+    /* Reduzido o gap */
 }
 
 .topo-do-site h1 {
@@ -138,6 +211,7 @@ section.topo-do-site .flex {
     0% {
         top: 0;
     }
+
     100% {
         top: 30px;
     }
@@ -157,20 +231,25 @@ section.especialidades .flex {
 }
 
 .especialidades .especialidades-box {
-    flex: 1 1 calc(25% - 30px); /* 25% da largura menos o espaçamento */
+    flex: 1 1 calc(25% - 30px);
+    /* 25% da largura menos o espaçamento */
     background-color: #000;
     padding: 10px;
     margin-top: 10px;
     border-radius: 20px;
     transition: 0.2s;
-    text-align: center; /* Centralizar o conteúdo */
-    box-shadow: 0 0 0 rgba(0, 0, 0, 0); /* Removido o box-shadow inicial */
-    overflow: hidden; /* Evitar que o box-shadow cause uma quebra de layout */
+    text-align: center;
+    /* Centralizar o conteúdo */
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+    /* Removido o box-shadow inicial */
+    overflow: hidden;
+    /* Evitar que o box-shadow cause uma quebra de layout */
 }
 
 .especialidades .especialidades-box:hover {
     transform: scale(1.05);
-    box-shadow: 0 0 8px rgba(255, 255, 255, 0.5); /* Adicionado box-shadow com rgba */
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+    /* Adicionado box-shadow com rgba */
 }
 
 .especialidades .especialidades-box .icon-send {
@@ -185,65 +264,16 @@ section.especialidades .flex {
 }
 
 .especialidades .especialidades-box p {
-    font-size: 16px; /* Tamanho da fonte do parágrafo ajustado */
-    color: #fff; /* Cor do texto do parágrafo */
-}
-
-/* Media Queries */
-@media (max-width: 1200px) {
-    .especialidades .especialidades-box {
-        flex: 1 1 calc(33.33% - 30px); /* 3 por linha em telas menores */
-    }
-}
-
-@media (max-width: 900px) {
-    .especialidades .especialidades-box {
-        flex: 1 1 calc(50% - 30px); /* 2 por linha em telas menores */
-    }
-
-    header nav ul li {
-        padding: 0 10px; /* Ajuste do padding para telas menores */
-    }
-
-    .btn-contato button {
-        padding: 8px 30px; /* Ajuste do padding do botão */
-        font-size: 16px; /* Ajuste do tamanho da fonte */
-    }
-
-    .topo-do-site h1 {
-        font-size: 36px; /* Ajuste do tamanho da fonte do título */
-    }
-
-    .topo-do-site .flex {
-        flex-direction: column; /* Ajuste de layout para telas menores */
-    }
-}
-
-@media (max-width: 600px) {
-    .especialidades .especialidades-box {
-        flex: 1 1 calc(100% - 20px); /* 1 por linha em telas menores */
-    }
-
-    .interface {
-        padding: 0 2%; /* Ajuste do padding para telas menores */
-    }
-
-    section.topo-do-site .flex {
-        gap: 10px; /* Ajuste do gap para telas menores */
-    }
-
-    .topo-do-site h1 {
-        font-size: 28px; /* Ajuste do tamanho da fonte do título */
-    }
-
-    .topo-do-site .txt-topo-site p {
-        font-size: 14px; /* Ajuste do tamanho da fonte do parágrafo */
-    }
+    font-size: 16px;
+    /* Tamanho da fonte do parágrafo ajustado */
+    color: #fff;
+    /* Cor do texto do parágrafo */
 }
 
 .maps-mapa {
     width: 100%;
-    height: 500px; /* Altura fixa para a visualização, pode ser ajustada conforme necessário */
+    height: 500px;
+    /* Altura fixa para a visualização, pode ser ajustada conforme necessário */
 }
 
 .container-maps h2 {
@@ -281,7 +311,8 @@ form {
     margin-top: 40px;
 }
 
-form input, form textarea {
+form input,
+form textarea {
     width: 100%;
     background-color: #3a3a3a;
     border: 0;
@@ -351,16 +382,99 @@ footer .line-footer {
     justify-content: center;
 }
 
-footer .line-footer p {
+footer .line-footer ion-icon {
     color: #0a84f6;
     font-size: 32px;
     margin-top: 30px;
-    margin-right: 10px; 
+    margin-right: 10px;
 }
 
 footer .line-footer a {
     color: #fff;
     font-size: 15px;
     text-decoration: none;
-    margin-left: 10px; 
+    margin-left: 10px;
+}
+
+/*Responsividade*/
+
+@media screen and (max-width: 900px) {
+
+    /*Classes Gerais*/
+
+    .btn-abrir-menu ion-icon{   
+        color: #0a84f6;
+        font-size: 40px;
+    }
+
+    .topo-do-site .flex {
+        flex-direction: column-reverse;
+    }
+
+    section.topo-do-site .flex {
+        gap: 30px;
+    }
+
+    /*cabeçalho*/
+    .menu-desktop,
+    .btn-contato {
+        display: none;
+    }
+
+    section.topo-do-site {
+        padding: 30px 8%;
+    }
+
+    .topo-do-site h1 {
+        font-size: 30px;
+        line-height: 35px;
+    }
+
+    .logo-image {
+        max-width: 45%;
+
+    }
+
+    h2.titulo{  
+        font-size: 30px;
+        line-height: 30px;
+    }
+
+    /* Estilo das Especialidades */
+    section.especialidades {
+        padding: 10px 8%;
+    }
+
+    section.especialidade .flex{    
+        flex-direction: column;
+        flex-wrap: wrap;
+        
+    }
+
+    footer .flex{   
+        flex-direction: column;
+    }
+
+    footer .line-footer{    
+        text-align: center;
+    }
+
+    @media (max-width: 1200px) {
+        .especialidades .especialidades-box {
+            flex: 1 1 calc(33.33% - 30px); /* 3 por linha em telas menores */
+        }
+    }
+    
+    @media (max-width: 900px) {
+        .especialidades .especialidades-box {
+            flex: 1 1 calc(50% - 30px); /* 2 por linha em telas menores */
+        }
+    }
+    
+    @media (max-width: 600px) {
+        .especialidades .especialidades-box {
+            flex: 1 1 calc(100% - 20px); /* 1 por linha em telas menores */
+        }
+    }
+
 }
