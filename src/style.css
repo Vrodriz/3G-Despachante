@@ -104,12 +104,25 @@ header nav.menu-desktop ul li {
 }
 
 /* Esconder o container do menu mobile por padrão */
+/* Esconder o container do menu mobile por padrão */
 .menu-mobile-container {
     display: none;
 }
 
+/* Exibir o container do menu mobile em telas menores que 900px */
+@media screen and (max-width: 900px) {
+    .menu-mobile-container {
+        display: block;
+    }
+}
 
-.menu-mobile{   
+/* Estilo do botão abrir menu */
+.btn-abrir-menu ion-icon {
+    color: #0a84f6;
+    font-size: 40px;
+}
+
+.menu-mobile{
     background-color: #000;
     height: 100vh;
     position: fixed;
@@ -118,46 +131,41 @@ header nav.menu-desktop ul li {
     z-index: 999999;
     width: 0%;
     overflow: hidden;
-    transition: .5s;
-
+    transition: .3s;
 }
 
-.menu-mobile-container {
-    display: none;
+.menu-mobile.abrir-menu{
+    width: 60%;
 }
 
-.menu-mobile.abrir-menu{    
-    width: 70%;
-}
-
-.menu-mobile.abrir-menu ~ .overlay-menu{  
+.menu-mobile.abrir-menu ~ .overlay-menu {
     display: block;
 }
 
-.menu-mobile .btn-fechar{   
-    padding: 20px 5%;
+.menu-mobile .btn-fechar {
+    padding: 40px 10%;
 }
 
-.menu-mobile .btn-fechar ion-icon{ 
+.menu-mobile .btn-fechar ion-icon{
     color: #fff;
-    font-size: 40px;
+    font-size: 30px;
 }
 
-.menu-mobile nav ul{    
+.menu-mobile nav ul {
     text-align: right;
     display: flex;
     flex-direction: column;
 }
 
-.menu-mobile nav ul li a{   
+.menu-mobile nav ul li a {
     color: #fff;
     font-size: 20px;
     font-weight: 300;
-    padding: 30px 8%;
+    padding: 20px 8%;
     display: block;
 }
 
-.overlay-menu{  
+.overlay-menu {
     background-color: #0000008a;
     width: 100%;
     height: 100%;
@@ -168,9 +176,10 @@ header nav.menu-desktop ul li {
     display: none;
 }
 
-.menu-mobile nav ul li a:hover{ 
+.menu-mobile nav ul li a:hover {
     background-color: #0a84f6;
     color: #000;
+    padding: 20px 0%; /* Aumente o valor do padding horizontal conforme necessário */
 }
 
 .btn-contato button:hover,
@@ -204,6 +213,7 @@ section.topo-do-site .flex {
 
 .topo-do-site .txt-topo-site h1 span {
     color: #ca3946;
+    
 }
 
 .topo-do-site .txt-topo-site p {
@@ -294,16 +304,19 @@ section.especialidades .flex {
 }
 
 .maps h2 {
-    color: #0a84f6;
+    color: #ca3946;
 }
 
-.container-maps p {
+.container-maps h3 {
+    padding: 15px 4%;
+    font-size: 17px;
+    text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
     border: 1px solid #000;
     color: #fff;
-    background-color: #ca3946;
+    background-color: #0a84f6;
 }
 
 /* Formulário */
@@ -390,25 +403,40 @@ footer .line-footer {
     display: flex;
     align-items: center;
     justify-content: center;
+    
 }
 
 footer .line-footer ion-icon {
     color: #0a84f6;
     font-size: 32px;
-    margin-top: 30px;
-    margin-right: 10px;
+    vertical-align: middle; /* Alinha verticalmente com o texto */
+    margin-right: 5px; /* Reduzido o espaço à direita do ícone */
+    
 }
 
 footer .line-footer a {
     color: #fff;
     font-size: 15px;
     text-decoration: none;
-    margin-left: 10px;
+    display: inline-flex; /* Para alinhar verticalmente */
+    align-items: center; /* Alinha verticalmente com o ícone */
+    margin-left: 5px; /* Ajustado o espaço à esquerda do link */
 }
+
 
 /*Responsividade*/
 
 @media screen and (max-width: 900px) {
+    
+    header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 9999;
+        padding: 1px 4% ; /* Ajuste o padding conforme necessário */
+    }
+    
 
     /*Classes Gerais*/
 
@@ -430,6 +458,10 @@ footer .line-footer a {
 
     section.topo-do-site .flex {
         gap: 30px;
+    }
+
+    .topo-do-site .img-topo-site img{   
+        animation: flutuar 1.0s ease-in-out infinite alternate;  
     }
 
     /*cabeçalho*/
@@ -465,6 +497,11 @@ footer .line-footer a {
     section.especialidade .flex{    
         flex-direction: column;
         flex-wrap: wrap;
+        
+    }
+
+    .container-maps{    
+        padding: 10px 2%;
         
     }
 
