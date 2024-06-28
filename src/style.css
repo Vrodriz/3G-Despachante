@@ -406,11 +406,31 @@ footer .line-footer {
     
 }
 
+.flex.align-items {
+    display: flex;
+    align-items: center;
+}
+
+.logo-footer {
+    margin-right: 20px; /* Ajuste a margem conforme necessário */
+}
+
+.btn-social {
+    display: flex;
+    flex-direction: column;
+}
+
+.button-logo {
+    margin-bottom: 10px; /* Espaço entre os botões, ajuste conforme necessário */
+}
+
+
+
 footer .line-footer ion-icon {
     color: #0a84f6;
-    font-size: 32px;
-    vertical-align: middle; /* Alinha verticalmente com o texto */
-    margin-right: 5px; /* Reduzido o espaço à direita do ícone */
+    font-size: 42px;
+    vertical-align: middle; 
+    margin-right: 5px; 
     
 }
 
@@ -418,15 +438,58 @@ footer .line-footer a {
     color: #fff;
     font-size: 15px;
     text-decoration: none;
-    display: inline-flex; /* Para alinhar verticalmente */
-    align-items: center; /* Alinha verticalmente com o ícone */
-    margin-left: 5px; /* Ajustado o espaço à esquerda do link */
+    display: inline-flex; 
+    align-items: center; 
+    margin-left: 5px; 
 }
 
+/* Estilos para o rodapé */
+.rodape {
+    padding: 20px 4%;
+    background-color: #000;
+    color: #ffffffaf;
+    border-top: 1px solid #0a84f6;
+    margin-top: 40px;
+    text-align: center; /* Centraliza o conteúdo */
+}
+
+.rodape-texto {
+    margin-bottom: 10px;
+}
+
+.desenvolvido-por {
+    display: flex;
+    flex-direction: column; /* Empilha os elementos verticalmente */
+    align-items: center; /* Centraliza os itens */
+    gap: 10px;
+}
+
+.desenvolvido-por span {
+    font-size: 14px;
+}
+
+.logo-desenvolvedor {
+    max-width: 100px;
+    height: auto; /* Mantém a proporção da imagem */
+    margin-top: 10px; /* Espaço acima da logo */
+}
 
 /*Responsividade*/
+@media (max-width: 599px) {
+    .desenvolvido-por {
+        flex-direction: row; /* Alinha os elementos em linha */
+        justify-content: center; /* Centraliza horizontalmente */
+    }
+
+    .logo-desenvolvedor {
+        max-width: 80px; /* Reduz o tamanho da logo para telas menores */
+        margin-top: 0; /* Remove o espaço acima da logo */
+    }
+}
 
 @media screen and (max-width: 900px) {
+
+    
     
     header {
         position: fixed;
@@ -434,7 +497,7 @@ footer .line-footer a {
         left: 0;
         width: 100%;
         z-index: 9999;
-        padding: 1px 4% ; /* Ajuste o padding conforme necessário */
+        padding: 1px 4% ; 
     }
     
 
@@ -451,6 +514,17 @@ footer .line-footer a {
         font-size: 40px;
     }
     
+    footer .btn-social{ 
+        display: flex;
+        flex-direction: row;
+    }
+
+    footer .interface .line-footer .flex.align-items {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center; 
+    }
 
     .topo-do-site .flex {
         flex-direction: column-reverse;
@@ -512,6 +586,8 @@ footer .line-footer a {
     footer .line-footer{    
         text-align: center;
     }
+
+
 
     @media (max-width: 1200px) {
         .especialidades .especialidades-box {
